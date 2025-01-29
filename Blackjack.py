@@ -95,30 +95,36 @@ class Blackjack():
             self.v += self.v
             print(" ")
             print(f"You won {self.v} money")
+            print(" ")
             return self.v
 
-        elif(self.s < 22):
+        elif(self.s > 21):
             print(" ")
             print("You are bust.")
             self.v -= self.v
             print(" ")
             print(f"You won {self.v} money")
+            print(" ")
             return self.v
+            
 
         elif(self.s == self.d):
             print(" ")
             print("The round is draw.")
             print(" ")
             print(f"You won {self.v} money")
+            print(" ")
             return self.v 
 
-        elif(self.s > 22):
+        elif(self.s > 21):
             print(" ")
             print("You are bust.")
+            print(" ")
 
         elif(self.d > 22):
             print(" ")
-            print("The Dealer is bust.")        
+            print("The Dealer is bust.")
+            print(" ")        
 
 
 q = float(input("Enter the bets you want to place: "))
@@ -133,7 +139,15 @@ while l == 0:
         print("You lost the game.")
         print(" ")
         print("Please restart the game.")
-        l = 1
+        print(" ")
+        A = input(("Do you want to play next round? "))
+        A = A.lower()
+        if(A == 'yes'):
+            l = 0
+        else:
+            print(" ")
+            print("Thanks for playing.")
+            l = 1
 
     else:
         A = input(("Do you want to play next round? "))
