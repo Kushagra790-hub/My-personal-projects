@@ -1,8 +1,6 @@
 import random as r
 class Blackjack():
     def __init__ (self):
-        print("Welcome to Blackjack. ")
-        print(" ")
         self.b = r.randint(1,11)
         print("Your first card is: ",self.b)
         print(" ")
@@ -15,33 +13,41 @@ class Blackjack():
         print(f"{self.s} is the sum of your cards")
         print(" ")
         e = 0 
-        self.o = input("Do you want to stand or hit? ")
-        self.o = self.o.lower()
-        while e == 0:
-            if (self.o == "hit"):
-                self.d = r.randint(1,11)
-                self.s = self.s + self.d
-                print(" ")
-                print("The third card is: ",self.d)
-                print(" ")
-                print(f"{self.s} is the sum of your cards")
-                print(" ")
-                while e == 0:    
-                    self.p = input("Do you want to stand or hit? ")
-                    self.p = self.p.lower()
-                    if (self.p == "hit"):
-                        self.m = r.randint(1,11)
-                        self.s = self.s + self.m
-                        print(" ")
-                        print("The next card is: ",self.m)
-                        print(" ")
-                        print(f"{self.s} is the the sum of your cards")
-                        print(" ")
-                        e = 0
+        if(self.s > 21 or self.s == 21):
+            e = 1
+        else:
+            self.o = input("Do you want to stand or hit? ")
+            self.o = self.o.lower()
+            while e == 0:
+                if self.s > 21 or self.s == 21:
+                    e = 1
+                elif (self.o == "hit"):
+                    self.d = r.randint(1,11)
+                    self.s = self.s + self.d
+                    print(" ")
+                    print("The third card is: ",self.d)
+                    print(" ")
+                    print(f"{self.s} is the sum of your cards")
+                    print(" ")
+                    while e == 0:    
+                        if self.s > 21 or self.s == 21:
+                            e = 1
+                        else:
+                            self.p = input("Do you want to stand or hit? ")
+                            self.p = self.p.lower()
+                            if (self.p == "hit"):
+                                self.m = r.randint(1,11)
+                                self.s = self.s + self.m
+                                print(" ")
+                                print("The next card is: ",self.m)
+                                print(" ")
+                                print(f"{self.s} is the the sum of your cards")
+                                print(" ")
+                                e = 0
+                            else:
+                                e = 1
                     else:
-                        e = 1
-            else:
-                    e = 1   
+                            e = 1   
             
     def Dealer(self):
         print(" ")
@@ -127,6 +133,8 @@ class Blackjack():
             print(" ")        
 
 
+print("Welcome to Blackjack. ")
+print(" ")
 q = float(input("Enter the bets you want to place: "))
 l = 0
 while l == 0: 
