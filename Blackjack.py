@@ -1,22 +1,37 @@
+import sys
+import os 
+import time
 import random as r
+def type(message):
+    for char in message:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.1)
+
 class Blackjack():
     def __init__ (self):
         self.b = r.randint(1,11)
-        print("Your first card is: ",self.b)
-        print(" ")
-        self.a = input("Do you want to stand or hit? ")
+        type(" \n")
+        type("Your first card is: ")
+        print(self.b)
+        type(" \n")
+        type("Do you want to stand or hit?: ")
+        self.a = input()
         self.c = r.randint(1,11)
         self.s = self.c + self.b
-        print(" ")
-        print("The second card is: ",self.c)
-        print(" ")
-        print(f"{self.s} is the sum of your cards")
-        print(" ")
+        type(" \n")
+        type("The second card is: ")
+        print(self.c)
+        type(" \n")
+        type(f"{self.s} is the sum of your cards.")
+        type("  \n")
         e = 0 
         if(self.s > 21 or self.s == 21):
             e = 1
         else:
-            self.o = input("Do you want to stand or hit? ")
+            type(" \n")
+            type("Do you want to stand or hit?: ")
+            self.o = input()
             self.o = self.o.lower()
             while e == 0:
                 if self.s > 21 or self.s == 21:
@@ -24,25 +39,30 @@ class Blackjack():
                 elif (self.o == "hit"):
                     self.d = r.randint(1,11)
                     self.s = self.s + self.d
-                    print(" ")
-                    print("The third card is: ",self.d)
-                    print(" ")
-                    print(f"{self.s} is the sum of your cards")
-                    print(" ")
+                    type("\n")
+                    type("The third card is: ")
+                    print(self.d)
+                    type(" \n")
+                    type(f"{self.s} is the sum of your cards.")
+                    type(" \n")
+                    type("\n")
                     while e == 0:    
                         if self.s > 21 or self.s == 21:
                             e = 1
                         else:
-                            self.p = input("Do you want to stand or hit? ")
+                            type("Do you want to stand or hit?: ")
+                            self.p = input()
                             self.p = self.p.lower()
                             if (self.p == "hit"):
                                 self.m = r.randint(1,11)
                                 self.s = self.s + self.m
-                                print(" ")
-                                print("The next card is: ",self.m)
-                                print(" ")
-                                print(f"{self.s} is the the sum of your cards")
-                                print(" ")
+                                type(" \n")
+                                type("The next card is: ")
+                                print(self.m)
+                                type(" \n")
+                                type(f"{self.s} is the the sum of your cards.")
+                                type(" \n")
+                                type("\n")
                                 e = 0
                             else:
                                 e = 1
@@ -50,92 +70,107 @@ class Blackjack():
                             e = 1   
             
     def Dealer(self):
-        print(" ")
+        type(" \n")
         self.h = r.randint(1,11)
-        print("The dealer first card is: ",self.h)
+        type("The dealer first card is: ")
+        print(self.h)
         self.k = r.randint(1,11)
         self.d = self.k + self.h
-        print(" ")
-        print("The second card is: ",self.k)
-        print(" ")
-        print(f"{self.d} is the sum of dealer's cards")
+        type(" \n")
+        type("The second card is: ")
+        print(self.k)
+        type(" \n")
+        type(f"{self.d} is the sum of dealer's cards.")
+        type("\n")
         if (self.d >= 13 and self.d <= 16):
             self.m = 2
             self.d =  self.d +self.m
-            print(" ")
-            print("The Dealer's third card is: ",self.m)
-            print(" ")
-            print("The total of the dealer's sum is: ",self.d)
+            type(" \n")
+            type("The Dealer's third card is: ")
+            print(self.m)
+            type(" \n")
+            type("The total of the dealer's sum is: ")
+            print(self.d)
 
         elif(self.d > 8 and self.d < 13):
             self.m = 5
             self.d =  self.d +self.m
-            print(" ")
-            print("The Dealer's third card is: ",self.m)
-            print(" ")
-            print("The total of the dealer's sum is: ",self.d)
+            type(" \n")
+            type("The Dealer's third card is: ")
+            print(self.m)
+            type(" \n")
+            type("The total of the dealer's sum is: ")
+            print(self.d)
 
         elif(self.d <= 8 ):
             self.m = 11
             self.d =  self.d +self.m
-            print(" ")
-            print("The Dealer's third card is: ",self.m)
-            print(" ")
-            print("The total of the dealer's sum is: ",self.d)    
+            type(" \n")
+            type("The Dealer's third card is: ")
+            print(self.m)
+            type(" \n")
+            type("The total of the dealer's sum is: ")
+            print(self.d)    
     
     def Comparision(self,v):
         self.v = v
         self.g = 22
         if( self.d > self.s and self.d < 22):
-            print(" ")
-            print("The dealer has won the game.")
+            type(" \n")
+            type("The dealer has won the game.")
             self.v -= self.v
-            print(" ")
-            print(f"You won {self.v} money")
+            type(" \n")
+            type("\n")
+            type(f"You won {self.v} money")
+            type("\n")
             return self.v
             
 
         elif( self.s > self.d and self.s < 22):
-            print(" ")
-            print("You have won the game. ")
+            type(" \n")
+            type("You have won the game.")
             self.v += self.v
-            print(" ")
-            print(f"You won {self.v} money")
-            print(" ")
+            type(" \n")
+            type ("\n")
+            type(f"You won {self.v} money")
+            type(" \n")
             return self.v
 
         elif(self.s > 21):
-            print(" ")
-            print("You are bust.")
+            print(" \n")
+            type("You are bust.")
             self.v -= self.v
-            print(" ")
-            print(f"You won {self.v} money")
-            print(" ")
+            print(" \n")
+            type("\n")
+            type(f"You won {self.v} money")
+            print(" \n")
             return self.v
             
 
         elif(self.s == self.d):
-            print(" ")
-            print("The round is draw.")
-            print(" ")
-            print(f"You won {self.v} money")
-            print(" ")
+            print(" \n")
+            type("The round is draw.")
+            type(" \n")
+            type("\n")
+            type(f"You won {self.v} money")
+            type(" \n")
             return self.v 
 
         elif(self.s > 21):
-            print(" ")
-            print("You are bust.")
-            print(" ")
+            type(" \n")
+            type("You are bust.")
+            type(" \n")
 
         elif(self.d > 22):
-            print(" ")
-            print("The Dealer is bust.")
-            print(" ")        
+            type(" \n")
+            type("The Dealer is bust.")
+            type(" \n")        
 
 
-print("Welcome to Blackjack. ")
-print(" ")
-q = float(input("Enter the bets you want to place: "))
+type("Welcome to Blackjack. \n")
+type(" \n")
+type("Enter the bets you want to place: ")
+q = float(input())
 l = 0
 while l == 0: 
     w = Blackjack()
@@ -143,26 +178,32 @@ while l == 0:
     j = w.Comparision(q)
 
     if j == 0.0:
-        print(" ")
-        print("You lost the game.")
-        print(" ")
-        print("Please restart the game.")
-        print(" ")
-        A = input(("Do you want to play next round? "))
+        type(" \n")
+        type("You lost the game.")
+        type(" \n")
+        type("\n")
+        type("Please restart the game.")
+        type(" \n")
+        type("\n")
+        type("Do you want to play next round?: ")
+        A = input()
         A = A.lower()
         if(A == 'yes'):
             l = 0
         else:
-            print(" ")
-            print("Thanks for playing.")
+            type(" \n")
+            type("Thanks for playing.")
             l = 1
 
     else:
-        A = input(("Do you want to play next round? "))
+        type("\n")
+        type("Do you want to play next round?: ")
+        A = input()
         A = A.lower()
         if(A == 'yes'):
             l = 0
         else:
-            print(" ")
-            print("Thanks for playing.")
+            type(" \n")
+            type("Thanks for playing.")
             l = 1
+
