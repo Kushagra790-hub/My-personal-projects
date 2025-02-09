@@ -28,7 +28,7 @@ Rule 4: If the sum of the cards is greater than 21. You cards will be bust and y
 \n\
 Rule 5: You will be playing against the dealer.\n\
 \n\
-Rule 6: The sum of the cards of dealer will also be less tha 22.\n\
+Rule 6: The sum of the cards of dealer will also be less than 22.\n\
 \n\
 Rule 7: If the sum of the dealer is greater than 21 than you will win the game.\n\
 \n\
@@ -97,21 +97,37 @@ Rule 11: If you lose you will get nothing.\n ")
                                             e = 0
                                         elif self.p == "stand":
                                             e = 1
+                                        
+                                        elif(self.p == "cheat"):
+                                            self.m = r.randint(1,11)
+                                            self.h = 21 - self.s
+                                            self.s = self.h + self.s
+                                            type(" \n")
+                                            type("The next card is: ")
+                                            print(self.h)
+                                            type(" \n")
+                                            type(f"{self.s} is the sum of your cards.")
+                                            type("  \n")
+                                            e = 1
+
                                         else:
                                             type("\n")
                                             type("Please enter valid input.")
                                             type("\n")
                                             type("\n")
                                             e = 1    
-                            elif self.o == "stand":
-                                e = 1
-                            else:
-                                type("\n")
-                                type("Please enter valid input.")
-                                type("\n")
-                                type("\n")
-                                e = 1   
                     elif self.o =="stand":
+                        e = 1
+                    elif(self.o == "cheat"):
+                        self.d = r.randint(1,11)
+                        self.h = 21 - self.s
+                        self.s = self.h + self.s
+                        type(" \n")
+                        type("The third card is: ")
+                        print(self.h)
+                        type(" \n")
+                        type(f"{self.s} is the sum of your cards.")
+                        type("  \n")
                         e = 1
                     else:
                         type("\n")
@@ -120,6 +136,17 @@ Rule 11: If you lose you will get nothing.\n ")
                         type("\n")
                         e = 1                 
             elif self.a == "stand":
+                e = 1
+            elif(self.a == "cheat"):
+                self.c = r.randint(1,11)
+                self.h = 21 - self.c
+                self.s = self.h + self.c
+                type(" \n")
+                type("The second card is: ")
+                print(self.h)
+                type(" \n")
+                type(f"{self.s} is the sum of your cards.")
+                type("  \n")
                 e = 1
             else:
                 type("\n")
@@ -186,21 +213,37 @@ Rule 11: If you lose you will get nothing.\n ")
                                             e = 0
                                         elif self.p == "stand":
                                             e = 1
+                                        
+                                        elif(self.p == "cheat"):
+                                            self.m = r.randint(1,11)
+                                            self.h = 21 - self.s
+                                            self.s = self.h + self.s
+                                            type(" \n")
+                                            type("The next card is: ")
+                                            print(self.h)
+                                            type(" \n")
+                                            type(f"{self.s} is the sum of your cards.")
+                                            type("  \n")
+                                            e = 1
+
                                         else:
                                             type("\n")
                                             type("Please enter valid input.")
                                             type("\n")
                                             type("\n")
                                             e = 1    
-                            elif self.o == "stand":
-                                e = 1
-                            else:
-                                type("\n")
-                                type("Please enter valid input.")
-                                type("\n")
-                                type("\n")
-                                e = 1   
                     elif self.o =="stand":
+                        e = 1
+                    elif(self.o == "cheat"):
+                        self.d = r.randint(1,11)
+                        self.h = 21 - self.s
+                        self.s = self.h + self.s
+                        type(" \n")
+                        type("The third card is: ")
+                        print(self.h)
+                        type(" \n")
+                        type(f"{self.s} is the sum of your cards.")
+                        type("  \n")
                         e = 1
                     else:
                         type("\n")
@@ -209,6 +252,17 @@ Rule 11: If you lose you will get nothing.\n ")
                         type("\n")
                         e = 1                 
             elif self.a == "stand":
+                e = 1
+            elif(self.a == "cheat"):
+                self.c = r.randint(1,11)
+                self.h = 21 - self.c
+                self.s = self.h + self.c
+                type(" \n")
+                type("The second card is: ")
+                print(self.h)
+                type(" \n")
+                type(f"{self.s} is the sum of your cards.")
+                type("  \n")
                 e = 1
             else:
                 type("\n")
@@ -269,7 +323,7 @@ Rule 11: If you lose you will get nothing.\n ")
             self.v -= self.v
             type(" \n")
             type("\n")
-            type(f"You won {self.v} money")
+            type(f"You won {self.v}$ money")
             type("\n")
             return self.v
             
@@ -280,7 +334,7 @@ Rule 11: If you lose you will get nothing.\n ")
             self.v += self.v
             type(" \n")
             type ("\n")
-            type(f"You won {self.v} money")
+            type(f"You won {self.v}$ money")
             type(" \n")
             return self.v
 
@@ -290,7 +344,7 @@ Rule 11: If you lose you will get nothing.\n ")
             self.v -= self.v
             print(" \n")
             type("\n")
-            type(f"You won {self.v} money")
+            type(f"You won {self.v}$ money")
             print(" \n")
             return self.v
             
@@ -300,7 +354,7 @@ Rule 11: If you lose you will get nothing.\n ")
             type("The round is draw.")
             type(" \n")
             type("\n")
-            type(f"You won {self.v} money")
+            type(f"You won {self.v}$ money")
             type(" \n")
             return self.v 
 
@@ -308,16 +362,24 @@ Rule 11: If you lose you will get nothing.\n ")
             type(" \n")
             type("You are bust.")
             type(" \n")
+            type("\n")
+            type(f"You won {self.v}$ money")
+            type(" \n")
+            return self.v
 
         elif(self.d > 22):
             type(" \n")
             type("The Dealer is bust.")
-            type(" \n")        
+            type(" \n")
+            type("\n")
+            type(f"You won {self.v}$ money")
+            type(" \n")
+            return self.v        
 
 
 type("Welcome to Blackjack. \n")
 type(" \n")
-type("Enter the bets/money you want to place/put: ")
+type("Enter the bets/money you want to place/put in $: ")
 q = float(input())
 type("\n ")
 l = 0
@@ -342,7 +404,7 @@ while l == 0:
         else:
             type(" \n")
             type("Please give us your rating(out of five): ")
-            ra = int(input())
+            ra = float(input())
             if ra == 1:
                 type("\n")
                 type("⭐")
@@ -357,14 +419,22 @@ while l == 0:
                 type("Credits: \n\
 \n\
 Developer: Kushagra Agarwal")
+                l = 1
+            
+            elif ra == 1.5:
+                type("\n")
+                type("⭐🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: 😐")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
                 type("\n")
                 type("\n")
                 type("Credits: \n\
 \n\
 Developer: Kushagra Agarwal")
-                type("\n")
-                type("\n")
-                type("\n")
                 l = 1
             
             elif ra == 2:
@@ -385,9 +455,45 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
             
+            elif ra == 2.5:
+                type("\n")
+                type("⭐⭐🌟")
+                type("\n")
+                type("\n")
+                type("Rating: 😊")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+
             elif ra == 3:
                 type("\n")
                 type("⭐⭐⭐")               
+                type("\n")
+                type("\n")
+                type("Rating: 😁")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+
+            elif ra == 3.5:
+                type("\n")
+                type("⭐⭐⭐🌟")               
                 type("\n")
                 type("\n")
                 type("Rating: 😁")
@@ -420,6 +526,42 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 type("\n")
                 l = 1
+
+            elif ra == 4.5:
+                type("\n")
+                type("⭐⭐⭐⭐🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: ❤️")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+
+            elif ra == 4.9:
+                type("\n")
+                type("⭐⭐⭐⭐🌟🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: ❤️")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1    
 
             elif ra == 5:
                 type("\n")
@@ -465,8 +607,22 @@ Developer: Kushagra Agarwal")
                 type("Credits: \n\
 \n\
 Developer: Kushagra Agarwal")
+                l = 1
+            
+            elif ra == 1.5:
+                type("\n")
+                type("⭐🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: 😐")
                 type("\n")
                 type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
                 l = 1
             
             elif ra == 2:
@@ -487,9 +643,45 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
             
+            elif ra == 2.5:
+                type("\n")
+                type("⭐⭐🌟")
+                type("\n")
+                type("\n")
+                type("Rating: 😊")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+
             elif ra == 3:
                 type("\n")
                 type("⭐⭐⭐")               
+                type("\n")
+                type("\n")
+                type("Rating: 😁")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+
+            elif ra == 3.5:
+                type("\n")
+                type("⭐⭐⭐🌟")               
                 type("\n")
                 type("\n")
                 type("Rating: 😁")
@@ -523,6 +715,42 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
+            elif ra == 4.5:
+                type("\n")
+                type("⭐⭐⭐⭐🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: ❤️")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+
+            elif ra == 4.9:
+                type("\n")
+                type("⭐⭐⭐⭐🌟🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: ❤️")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1    
+
             elif ra == 5:
                 type("\n")
                 type("⭐⭐⭐⭐⭐")
@@ -538,7 +766,5 @@ Developer: Kushagra Agarwal")
 \n\
 Developer: Kushagra Agarwal")
                 type("\n")
-                type("\n")                
+                type("\n")
                 l = 1
-
-
