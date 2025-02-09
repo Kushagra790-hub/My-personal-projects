@@ -115,6 +115,7 @@ Rule 11: If you lose you will get nothing.\n ")
                                             type("Please enter valid input.")
                                             type("\n")
                                             type("\n")
+                                            self.p = False
                                             e = 1    
                     elif self.o =="stand":
                         e = 1
@@ -134,6 +135,7 @@ Rule 11: If you lose you will get nothing.\n ")
                         type("Please enter valid input.")
                         type("\n")
                         type("\n")
+                        self.o = False
                         e = 1                 
             elif self.a == "stand":
                 e = 1
@@ -153,6 +155,7 @@ Rule 11: If you lose you will get nothing.\n ")
                 type("Please enter valid input.")
                 type("\n")
                 type("\n")
+                self.a = False
                 e = 1    
         else:
             type(" \n")
@@ -231,6 +234,7 @@ Rule 11: If you lose you will get nothing.\n ")
                                             type("Please enter valid input.")
                                             type("\n")
                                             type("\n")
+                                            self.p = False
                                             e = 1    
                     elif self.o =="stand":
                         e = 1
@@ -250,6 +254,7 @@ Rule 11: If you lose you will get nothing.\n ")
                         type("Please enter valid input.")
                         type("\n")
                         type("\n")
+                        self.o = False
                         e = 1                 
             elif self.a == "stand":
                 e = 1
@@ -269,6 +274,7 @@ Rule 11: If you lose you will get nothing.\n ")
                 type("Please enter valid input.")
                 type("\n")
                 type("\n")
+                self.a = False
                 e = 1    
 
     def Dealer(self):
@@ -317,7 +323,17 @@ Rule 11: If you lose you will get nothing.\n ")
     def Comparision(self,v):
         self.v = v
         self.g = 22
-        if( self.d > self.s and self.d < 22):
+        if(self.a == False or self.o == False or self.p == False):
+            type("\n")
+            type("You lost the game.")
+            type("\n")
+            type("\n")
+            self.v -= self.v
+            type(f"You won {self.v}$ money")
+            type("\n")
+            return self.v
+
+        elif( self.d > self.s and self.d < 22):
             type(" \n")
             type("The dealer has won the game.")
             self.v -= self.v
