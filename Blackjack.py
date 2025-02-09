@@ -6,69 +6,217 @@ def type(message):
     for char in message:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.1)
+        time.sleep(0.05)
 
 class Blackjack():
     def __init__ (self):
         self.b = r.randint(1,11)
-        type(" \n")
-        type("Your first card is: ")
-        print(self.b)
-        type(" \n")
-        type("Do you want to stand or hit?: ")
-        self.a = input()
-        self.c = r.randint(1,11)
-        self.s = self.c + self.b
-        type(" \n")
-        type("The second card is: ")
-        print(self.c)
-        type(" \n")
-        type(f"{self.s} is the sum of your cards.")
-        type("  \n")
-        e = 0 
-        if(self.s > 21 or self.s == 21):
-            e = 1
-        else:
+        type("\n")
+        type("Do you know the rules of Blackjack: ")
+        self.ru = input()
+        type("\n")
+        self.ru = self.ru.lower()
+
+        if (self.ru == "no"):
+            type("Rule 1: The cards are ranged from 1 to 11.\n\
+\n\
+Rule 2: You have to approach the sum of 21 by adding all the cards.\n\
+\n\
+Rule 3: The provided cards will be random.\n\
+\n\
+Rule 4: If the sum of the cards is greater than 21. You cards will be bust and you will lose the game.\n\
+\n\
+Rule 5: You will be playing against the dealer.\n\
+\n\
+Rule 6: The sum of the cards of dealer will also be less tha 22.\n\
+\n\
+Rule 7: If the sum of the dealer is greater than 21 than you will win the game.\n\
+\n\
+Rule 8: If both the player and the dealer sum is less than 21 than a comparision will done to check which sum is greater between them.\n\
+\n\
+Rule 9: The greatest sum between them will win.\n\
+\n\
+Rule 10: If you win you will recieve double the amount of your principle money.\n\
+\n\
+Rule 11: If you lose you will get nothing.\n ")
+            type(" \n")
+            type("Your first card is: ")
+            print(self.b)
             type(" \n")
             type("Do you want to stand or hit?: ")
-            self.o = input()
-            self.o = self.o.lower()
-            while e == 0:
-                if self.s > 21 or self.s == 21:
+            self.a = input()
+            self.a = self.a.lower()
+            if(self.a == 'hit'): 
+                self.c = r.randint(1,11)
+                self.s = self.c + self.b
+                type(" \n")
+                type("The second card is: ")
+                print(self.c)
+                type(" \n")
+                type(f"{self.s} is the sum of your cards.")
+                type("  \n")
+                e = 0 
+                if(self.s > 21 or self.s == 21):
                     e = 1
-                elif (self.o == "hit"):
-                    self.d = r.randint(1,11)
-                    self.s = self.s + self.d
-                    type("\n")
-                    type("The third card is: ")
-                    print(self.d)
+                else:
                     type(" \n")
-                    type(f"{self.s} is the sum of your cards.")
-                    type(" \n")
-                    type("\n")
-                    while e == 0:    
-                        if self.s > 21 or self.s == 21:
-                            e = 1
-                        else:
-                            type("Do you want to stand or hit?: ")
-                            self.p = input()
-                            self.p = self.p.lower()
-                            if (self.p == "hit"):
-                                self.m = r.randint(1,11)
-                                self.s = self.s + self.m
+                    type("Do you want to stand or hit?: ")
+                    self.o = input()
+                    self.o = self.o.lower()
+                    if self.o == 'hit':   
+                        while e == 0:
+                            if self.s > 21 or self.s == 21:
+                                e = 1
+                            elif (self.o == "hit"):
+                                self.d = r.randint(1,11)
+                                self.s = self.s + self.d
+                                type("\n")
+                                type("The third card is: ")
+                                print(self.d)
                                 type(" \n")
-                                type("The next card is: ")
-                                print(self.m)
-                                type(" \n")
-                                type(f"{self.s} is the the sum of your cards.")
+                                type(f"{self.s} is the sum of your cards.")
                                 type(" \n")
                                 type("\n")
-                                e = 0
-                            else:
+                                while e == 0:    
+                                    if self.s > 21 or self.s == 21:
+                                        e = 1
+                                    else:
+                                        type("Do you want to stand or hit?: ")
+                                        self.p = input()
+                                        self.p = self.p.lower()
+                                        if (self.p == "hit"):
+                                            self.m = r.randint(1,11)
+                                            self.s = self.s + self.m
+                                            type(" \n")
+                                            type("The next card is: ")
+                                            print(self.m)
+                                            type(" \n")
+                                            type(f"{self.s} is the the sum of your cards.")
+                                            type(" \n")
+                                            type("\n")
+                                            e = 0
+                                        elif self.p == "stand":
+                                            e = 1
+                                        else:
+                                            type("\n")
+                                            type("Please enter valid input.")
+                                            type("\n")
+                                            type("\n")
+                                            e = 1    
+                            elif self.o == "stand":
                                 e = 1
+                            else:
+                                type("\n")
+                                type("Please enter valid input.")
+                                type("\n")
+                                type("\n")
+                                e = 1   
+                    elif self.o =="stand":
+                        e = 1
                     else:
-                            e = 1   
-            
+                        type("\n")
+                        type("Please enter valid input.")
+                        type("\n")
+                        type("\n")
+                        e = 1                 
+            elif self.a == "stand":
+                e = 1
+            else:
+                type("\n")
+                type("Please enter valid input.")
+                type("\n")
+                type("\n")
+                e = 1    
+        else:
+            type(" \n")
+            type("Your first card is: ")
+            print(self.b)
+            type(" \n")
+            type("Do you want to stand or hit?: ")
+            self.a = input()
+            self.a = self.a.lower()
+            if(self.a == 'hit'): 
+                self.c = r.randint(1,11)
+                self.s = self.c + self.b
+                type(" \n")
+                type("The second card is: ")
+                print(self.c)
+                type(" \n")
+                type(f"{self.s} is the sum of your cards.")
+                type("  \n")
+                e = 0 
+                if(self.s > 21 or self.s == 21):
+                    e = 1
+                else:
+                    type(" \n")
+                    type("Do you want to stand or hit?: ")
+                    self.o = input()
+                    self.o = self.o.lower()
+                    if self.o == 'hit':   
+                        while e == 0:
+                            if self.s > 21 or self.s == 21:
+                                e = 1
+                            elif (self.o == "hit"):
+                                self.d = r.randint(1,11)
+                                self.s = self.s + self.d
+                                type("\n")
+                                type("The third card is: ")
+                                print(self.d)
+                                type(" \n")
+                                type(f"{self.s} is the sum of your cards.")
+                                type(" \n")
+                                type("\n")
+                                while e == 0:    
+                                    if self.s > 21 or self.s == 21:
+                                        e = 1
+                                    else:
+                                        type("Do you want to stand or hit?: ")
+                                        self.p = input()
+                                        self.p = self.p.lower()
+                                        if (self.p == "hit"):
+                                            self.m = r.randint(1,11)
+                                            self.s = self.s + self.m
+                                            type(" \n")
+                                            type("The next card is: ")
+                                            print(self.m)
+                                            type(" \n")
+                                            type(f"{self.s} is the the sum of your cards.")
+                                            type(" \n")
+                                            type("\n")
+                                            e = 0
+                                        elif self.p == "stand":
+                                            e = 1
+                                        else:
+                                            type("\n")
+                                            type("Please enter valid input.")
+                                            type("\n")
+                                            type("\n")
+                                            e = 1    
+                            elif self.o == "stand":
+                                e = 1
+                            else:
+                                type("\n")
+                                type("Please enter valid input.")
+                                type("\n")
+                                type("\n")
+                                e = 1   
+                    elif self.o =="stand":
+                        e = 1
+                    else:
+                        type("\n")
+                        type("Please enter valid input.")
+                        type("\n")
+                        type("\n")
+                        e = 1                 
+            elif self.a == "stand":
+                e = 1
+            else:
+                type("\n")
+                type("Please enter valid input.")
+                type("\n")
+                type("\n")
+                e = 1    
+
     def Dealer(self):
         type(" \n")
         self.h = r.randint(1,11)
@@ -169,8 +317,9 @@ class Blackjack():
 
 type("Welcome to Blackjack. \n")
 type(" \n")
-type("Enter the bets you want to place: ")
+type("Enter the bets/money you want to place/put: ")
 q = float(input())
+type("\n ")
 l = 0
 while l == 0: 
     w = Blackjack()
@@ -192,8 +341,104 @@ while l == 0:
             l = 0
         else:
             type(" \n")
-            type("Thanks for playing.")
-            l = 1
+            type("Please give us your rating(out of five): ")
+            ra = int(input())
+            if ra == 1:
+                type("\n")
+                type("⭐")
+                type("\n")
+                type("\n")               
+                type("Rating: 😐")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                type("\n")
+                l = 1
+            
+            elif ra == 2:
+                type("\n")
+                type("⭐⭐")
+                type("\n")
+                type("\n")
+                type("Rating: 😊")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+            
+            elif ra == 3:
+                type("\n")
+                type("⭐⭐⭐")               
+                type("\n")
+                type("\n")
+                type("Rating: 😁")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+
+            elif ra == 4:
+                type("\n")
+                type("⭐⭐⭐⭐")
+                type("\n")
+                type("\n")               
+                type("Rating: ❤️")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+
+            elif ra == 5:
+                type("\n")
+                type("⭐⭐⭐⭐⭐")
+                type("\n")
+                type("\n")               
+                type("Rating: 🎉")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+                
 
     else:
         type("\n")
@@ -204,6 +449,96 @@ while l == 0:
             l = 0
         else:
             type(" \n")
-            type("Thanks for playing.")
-            l = 1
+            type("Please give us your rating(out of five): ")
+            ra = int(input())
+            if ra == 1:
+                type("\n")
+                type("⭐")
+                type("\n")
+                type("\n")               
+                type("Rating: 😐")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+            
+            elif ra == 2:
+                type("\n")
+                type("⭐⭐")
+                type("\n")
+                type("\n")
+                type("Rating: 😊")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+            
+            elif ra == 3:
+                type("\n")
+                type("⭐⭐⭐")               
+                type("\n")
+                type("\n")
+                type("Rating: 😁")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+
+            elif ra == 4:
+                type("\n")
+                type("⭐⭐⭐⭐")
+                type("\n")
+                type("\n")               
+                type("Rating: ❤️")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1
+
+            elif ra == 5:
+                type("\n")
+                type("⭐⭐⭐⭐⭐")
+                type("\n")
+                type("\n")               
+                type("Rating: 🎉")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")                
+                l = 1
+
 
