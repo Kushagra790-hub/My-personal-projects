@@ -390,7 +390,7 @@ Rule 11: If you lose you will get nothing.\n ")
             type("\n")
             return self.v
 
-        elif(self.d > 22):
+        elif(self.d > 21):
             type(" \n")
             type("The Dealer is bust.")
             type(" \n")
