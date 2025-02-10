@@ -96,6 +96,7 @@ Rule 11: If you lose you will get nothing.\n ")
                                             type("\n")
                                             e = 0
                                         elif self.p == "stand":
+                                            self.s = self.b +self.c + self.d
                                             e = 1
                                         
                                         elif(self.p == "cheat"):
@@ -118,6 +119,7 @@ Rule 11: If you lose you will get nothing.\n ")
                                             self.p = False
                                             e = 1    
                     elif self.o =="stand":
+                        self.s = self.b + self.c
                         e = 1
                     elif(self.o == "cheat"):
                         self.d = r.randint(1,11)
@@ -138,6 +140,7 @@ Rule 11: If you lose you will get nothing.\n ")
                         self.o = False
                         e = 1                 
             elif self.a == "stand":
+                self.s = self.b
                 e = 1
             elif(self.a == "cheat"):
                 self.c = r.randint(1,11)
@@ -215,6 +218,7 @@ Rule 11: If you lose you will get nothing.\n ")
                                             type("\n")
                                             e = 0
                                         elif self.p == "stand":
+                                            self.s = self.b +self.d + self.c
                                             e = 1
                                         
                                         elif(self.p == "cheat"):
@@ -237,6 +241,7 @@ Rule 11: If you lose you will get nothing.\n ")
                                             self.p = False
                                             e = 1    
                     elif self.o =="stand":
+                        self.s = self.b + self.c
                         e = 1
                     elif(self.o == "cheat"):
                         self.d = r.randint(1,11)
@@ -257,6 +262,7 @@ Rule 11: If you lose you will get nothing.\n ")
                         self.o = False
                         e = 1                 
             elif self.a == "stand":
+                self.s = self.b
                 e = 1
             elif(self.a == "cheat"):
                 self.c = r.randint(1,11)
@@ -275,7 +281,7 @@ Rule 11: If you lose you will get nothing.\n ")
                 type("\n")
                 type("\n")
                 self.a = False
-                e = 1    
+                e = 1   
 
     def Dealer(self):
         type(" \n")
@@ -323,17 +329,8 @@ Rule 11: If you lose you will get nothing.\n ")
     def Comparision(self,v):
         self.v = v
         self.g = 22
-        if(self.a == False or self.o == False or self.p == False):
-            type("\n")
-            type("You lost the game.")
-            type("\n")
-            type("\n")
-            self.v -= self.v
-            type(f"You won {self.v}$ money")
-            type("\n")
-            return self.v
-
-        elif( self.d > self.s and self.d < 22):
+        
+        if( self.d > self.s and self.d < 22):
             type(" \n")
             type("The dealer has won the game.")
             self.v -= self.v
@@ -381,6 +378,16 @@ Rule 11: If you lose you will get nothing.\n ")
             type("\n")
             type(f"You won {self.v}$ money")
             type(" \n")
+            return self.v
+
+        if(self.a == 0 or self.o == 0 or self.p == 0):
+            type("\n")
+            type("You lost the game.")
+            type("\n")
+            type("\n")
+            self.v -= self.v
+            type(f"You won {self.v}$ money")
+            type("\n")
             return self.v
 
         elif(self.d > 22):
