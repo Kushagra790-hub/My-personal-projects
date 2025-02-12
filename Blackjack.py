@@ -144,7 +144,7 @@ Rule 11: If you lose you will get nothing.\n ")
                 e = 1
             elif(self.a == "cheat"):
                 self.c = r.randint(1,11)
-                self.h = 21 - self.c
+                self.h = 21 - self.b
                 self.s = self.h + self.c
                 type(" \n")
                 type("The second card is: ")
@@ -266,7 +266,7 @@ Rule 11: If you lose you will get nothing.\n ")
                 e = 1
             elif(self.a == "cheat"):
                 self.c = r.randint(1,11)
-                self.h = 21 - self.c
+                self.h = 21 - self.b
                 self.s = self.h + self.c
                 type(" \n")
                 type("The second card is: ")
@@ -444,7 +444,7 @@ while l == 0:
 Developer: Kushagra Agarwal")
                 l = 1
             
-            elif ra == 1.5:
+            elif ra >= 1.1 and ra <= 1.5:
                 type("\n")
                 type("⭐🌟")
                 type("\n")
@@ -459,6 +459,24 @@ Developer: Kushagra Agarwal")
 \n\
 Developer: Kushagra Agarwal")
                 l = 1
+            
+            elif ra >= 1.6 and ra <= 1.9:
+                type("\n")
+                type("⭐⭐⭐⭐🌟🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: 👊")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1 
             
             elif ra == 2:
                 type("\n")
@@ -478,7 +496,7 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
             
-            elif ra == 2.5:
+            elif ra >= 2.1 and ra <= 2.5:
                 type("\n")
                 type("⭐⭐🌟")
                 type("\n")
@@ -496,6 +514,24 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
+            elif ra >= 2.6 and ra <= 2.9:
+                type("\n")
+                type("⭐⭐⭐⭐🌟🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: 🤌")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1 
+            
             elif ra == 3:
                 type("\n")
                 type("⭐⭐⭐")               
@@ -514,7 +550,7 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
-            elif ra == 3.5:
+            elif ra >= 3.1 and ra <= 3.5:
                 type("\n")
                 type("⭐⭐⭐🌟")               
                 type("\n")
@@ -532,7 +568,25 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
-            elif ra == 4:
+            elif ra >= 3.6 and ra <= 3.9:
+                type("\n")
+                type("⭐⭐⭐⭐🌟🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: 💪")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1 
+
+            elif ra  == 4:
                 type("\n")
                 type("⭐⭐⭐⭐")
                 type("\n")
@@ -550,7 +604,7 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
-            elif ra == 4.5:
+            elif ra >= 4.1 and ra <= 4.5:
                 type("\n")
                 type("⭐⭐⭐⭐🌟")
                 type("\n")
@@ -568,7 +622,7 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
-            elif ra == 4.9:
+            elif ra >= 4.6 and ra <= 4.9:
                 type("\n")
                 type("⭐⭐⭐⭐🌟🌟")
                 type("\n")
@@ -603,7 +657,6 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 type("\n")
                 l = 1
-                
 
     else:
         type("\n")
@@ -615,7 +668,7 @@ Developer: Kushagra Agarwal")
         else:
             type(" \n")
             type("Please give us your rating(out of five): ")
-            ra = int(input())
+            ra = float(input())
             if ra == 1:
                 type("\n")
                 type("⭐")
@@ -632,7 +685,7 @@ Developer: Kushagra Agarwal")
 Developer: Kushagra Agarwal")
                 l = 1
             
-            elif ra == 1.5:
+            elif ra >= 1.1 and ra <= 1.5:
                 type("\n")
                 type("⭐🌟")
                 type("\n")
@@ -647,6 +700,24 @@ Developer: Kushagra Agarwal")
 \n\
 Developer: Kushagra Agarwal")
                 l = 1
+            
+            elif ra >= 1.6 and ra <= 1.9:
+                type("\n")
+                type("⭐⭐⭐⭐🌟🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: 👊")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1 
             
             elif ra == 2:
                 type("\n")
@@ -666,7 +737,7 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
             
-            elif ra == 2.5:
+            elif ra >= 2.1 and ra <= 2.5:
                 type("\n")
                 type("⭐⭐🌟")
                 type("\n")
@@ -684,6 +755,24 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
+            elif ra >= 2.6 and ra <= 2.9:
+                type("\n")
+                type("⭐⭐⭐⭐🌟🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: 🤌")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1 
+            
             elif ra == 3:
                 type("\n")
                 type("⭐⭐⭐")               
@@ -702,7 +791,7 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
-            elif ra == 3.5:
+            elif ra >= 3.1 and ra <= 3.5:
                 type("\n")
                 type("⭐⭐⭐🌟")               
                 type("\n")
@@ -720,7 +809,25 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
-            elif ra == 4:
+            elif ra >= 3.6 and ra <= 3.9:
+                type("\n")
+                type("⭐⭐⭐⭐🌟🌟")
+                type("\n")
+                type("\n")               
+                type("Rating: 💪")
+                type("\n")
+                type("\n")
+                type("Thanks for playing.")
+                type("\n")
+                type("\n")
+                type("Credits: \n\
+\n\
+Developer: Kushagra Agarwal")
+                type("\n")
+                type("\n")
+                l = 1 
+
+            elif ra  == 4:
                 type("\n")
                 type("⭐⭐⭐⭐")
                 type("\n")
@@ -738,7 +845,7 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
-            elif ra == 4.5:
+            elif ra >= 4.1 and ra <= 4.5:
                 type("\n")
                 type("⭐⭐⭐⭐🌟")
                 type("\n")
@@ -756,7 +863,7 @@ Developer: Kushagra Agarwal")
                 type("\n")
                 l = 1
 
-            elif ra == 4.9:
+            elif ra >= 4.6 and ra <= 4.9:
                 type("\n")
                 type("⭐⭐⭐⭐🌟🌟")
                 type("\n")
