@@ -145,7 +145,7 @@ Rule 11: If you lose you will get nothing.\n ")
             elif(self.a == "cheat"):
                 self.c = r.randint(1,11)
                 self.h = 21 - self.b
-                self.s = self.h + self.c
+                self.s = self.h + self.b
                 type(" \n")
                 type("The second card is: ")
                 print(self.h)
@@ -267,7 +267,7 @@ Rule 11: If you lose you will get nothing.\n ")
             elif(self.a == "cheat"):
                 self.c = r.randint(1,11)
                 self.h = 21 - self.b
-                self.s = self.h + self.c
+                self.s = self.h + self.b
                 type(" \n")
                 type("The second card is: ")
                 print(self.h)
